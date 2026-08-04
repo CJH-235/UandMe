@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To My Dearest</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== AUTH SCREEN ===== -->
+  <div id="auth-screen" class="auth-screen">
+    <div class="auth-box">
+      <h1 class="auth-title">💌</h1>
+      <p class="auth-subtitle">这是一份为你准备的礼物</p>
+      <p class="auth-hint">请输入密码解锁</p>
+      <input type="text" id="code-input" class="code-input" placeholder="· · · · · ·" maxlength="6" autofocus />
+      <p class="auth-error" id="auth-error">密码不对，再试一次吧～</p>
+      <button id="auth-btn" class="auth-btn">解锁 ✨</button>
+    </div>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div id="main-content" class="main-content hidden">
+
+    <!-- Hero / Counter -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <h1 class="hero-greeting">致 <span class="name-deco">敏</span></h1>
+        <p class="hero-desc">从一条好友验证开始的故事 📱</p>
+        <div class="counter-box">
+          <div class="counter-number" id="days-counter">0</div>
+          <div class="counter-label">天</div>
+        </div>
+        <p class="counter-sub">（是从 2026.07.09 加上微信那天开始算的～</p>
+        <!-- Welcome message -->
+        <div class="welcome-message">
+          <p class="welcome-greeting">敏，你好呀！</p>
+          <p class="welcome-text">这里是记录我们友谊的地方！</p>
+          <p class="welcome-text">它会随着时间推移而增加内容的哦，就像我们一样</p>
+        </div>
+        <!-- Wind line -->
+        <svg class="wind-line" viewBox="0 0 400 60" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#80ded9" />
+              <stop offset="100%" stop-color="#0b6e4f" />
+            </linearGradient>
+          </defs>
+          <path d="M0,30 C80,0 120,60 200,30 C280,0 320,60 400,30" stroke="url(#lineGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7" />
+          <circle cx="0" cy="30" r="14" fill="#80ded9" />
+          <circle cx="400" cy="30" r="14" fill="#0b6e4f" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+      <h2 class="section-title">我们的时间轴</h2>
+      <p class="section-subtitle">点击卡片，重温我们的点滴 👣</p>
+
+      <div class="timeline" id="timeline">
+
+        <!-- Card 1: WeChat added -->
+        <div class="flip-card" data-card="1">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-date">2026.07.09</div>
+              <div class="card-icon">💬</div>
+              <div class="card-title">成为朋友的第一天</div>
+              <div class="card-sub">点击翻开回忆</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="back-icon">🎉</div>
+              <p class="back-text">成为朋友的第一天！</p>
+              <p class="back-sub">2026年7月9日，我们添加了微信<br/>^v^</p>
+              <div class="back-divider"></div>
+              <p class="back-poem">感谢那一天<br/>我们相遇了</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Birthday (2 gifts) -->
+        <div class="flip-card" data-card="2">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-date">2026.08.05</div>
+              <div class="card-icon">🎂</div>
+              <div class="card-title">生日快乐</div>
+              <div class="card-sub">点击打开惊喜 🎁</div>
+            </div>
+            <div class="flip-card-back">
+              <p class="back-text">˗ˋˏ🎂ˎˊ˗ 1/2 Happy Birthday!</p>
+              <p class="back-sub">把一年分成两次庆祝，能让快乐加倍！</p>
+              <div class="gift-boxes" id="gift-boxes-2">
+                <div class="gift-box" data-gift="1">
+                  <span class="gift-icon">🎵</span>
+                  <span class="gift-label">一首曲子</span>
+                </div>
+                <div class="gift-box" data-gift="2">
+                  <span class="gift-icon">🗿</span>
+                  <span class="gift-label">3D 模型</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Future -->
+        <div class="flip-card future-card" data-card="3">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-date">✨ 未来</div>
+              <div class="card-icon">🌟</div>
+              <div class="card-title">未完待续</div>
+              <div class="card-sub">点击查看</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="back-icon">💫</div>
+              <p class="back-text">将会有无限可能</p>
+              <p class="back-sub">未来的故事，我们一起书写</p>
+              <div class="back-divider"></div>
+              <p class="back-poem">愿你<br/>如星河般璀璨</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>— 致最特别的你 —</p>
+      <p class="footer-sign">💕 forever & always 💕</p>
+    </footer>
+  </div>
+
+  <!-- ===== GIFT OVERLAY ===== -->
+  <div id="gift-overlay" class="gift-overlay hidden">
+    <div class="gift-overlay-content">
+      <button id="gift-close" class="gift-close">&times;</button>
+
+      <!-- Music mode (gift 1) -->
+      <div id="music-mode" class="music-mode hidden">
+        <div class="sheet-wrapper">
+          <div class="sheet-container">
+            <embed id="sheet-music" class="sheet-music" src="" type="application/pdf" />
+          </div>
+        </div>
+        <div class="music-info">
+          <p class="music-title">🎵 Peace</p>
+          <p class="music-desc">这是一首为你而写的曲子<br/>希望能陪你入眠，让你放松身心<br/>在每一个安静的夜晚，替我轻轻抱住你</p>
+        </div>
+        <div class="music-player">
+          <audio id="audio-player" src=""></audio>
+          <div class="player-controls">
+            <button id="play-btn" class="ctrl-btn play-btn">▶ 播放</button>
+            <button id="restart-btn" class="ctrl-btn restart-btn">⟳ 重播</button>
+          </div>
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <div class="time-display">
+            <span id="current-time">0:00</span>
+            <span id="duration-time">0:00</span>
+          </div>
+        </div>
+        <div class="music-footer">
+          <span class="fish-note">找 🐟 拿原 PDF 和音频</span>
+        </div>
+      </div>
+
+      <!-- Image mode (gift 2 - fallback) -->
+      <img id="gift-image" class="gift-image hidden" src="" alt="礼物" />
+      <p id="gift-placeholder" class="gift-placeholder hidden"></p>
+
+      <!-- 3D Model mode (gift 2) -->
+      <div id="model-mode" class="model-mode hidden">
+        <div class="model-header">
+          <span class="model-badge">🎂 生日礼物 2026</span>
+        </div>
+                      <img class="model-birthday-photo" src="images/happy_birthday.jpg"               
+      alt="生日快乐" />                                                                       
+        <div class="model-content">
+          <h3 class="model-title">卡卡西</h3>
+          <p class="model-subtitle">—— 旗木卡卡西 · 火影忍者 ——</p>
+          <div class="model-divider"></div>
+          <div class="model-desc">
+            <p>这是我亲手为你做的 3D 模型！嘻嘻</p>
+            <p>每一根头发丝、每一个五官、每一处细节</p>
+            <p>都是我用 Blender 一点一点做出来的哦～</p>
+          </div>
+          <div class="model-divider"></div>
+          <p class="model-promise">以后每一个生日，我都会给你建一个<br/>你喜欢的 IP 的 3D 模型</p>
+          <p class="model-tagline">今年是卡卡西，下一次会是哪个呢？</p>
+        </div>
+        <div class="model-footer">
+          <span class="fish-note">找 🐟 拿原图及原文件</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
